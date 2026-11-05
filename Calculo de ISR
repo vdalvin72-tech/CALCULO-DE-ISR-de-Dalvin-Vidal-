@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+// 1. Función que calcula el total a pagar aplicando un 10% de descuento si supera 5,000
+double calcularTotalPagar(int cantidad, double precio) {
+    double subtotal = cantidad * precio;
+    if (subtotal > 5000) {
+        subtotal = subtotal - (subtotal * 0.10); // Aplica el 10% de descuento
+    }
+    return subtotal;
+}
+
+// 2. Procedimiento que muestra en pantalla el total a pagar
+void mostrarTotal(double totalPagar) {
+    cout << "Total a pagar: " << totalPagar << endl;
+}
+
+int main() {
+    int cantidad;
+    double precio;
+
+    // 3. Pide al usuario la cantidad y el precio
+    cout << "Cantidad: ";
+    cin >> cantidad;
+    
+    cout << "Precio: ";
+    cin >> precio;
+
+    // 4. Llama a la función, guarda lo que retorna y pásalo al procedimiento
+    double total = calcularTotalPagar(cantidad, precio);
+    mostrarTotal(total);
+
+    return 0;
+}
